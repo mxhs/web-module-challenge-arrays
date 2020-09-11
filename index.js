@@ -78,12 +78,12 @@ For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainb
 
 function addFlavor(arr, aFlavor){
     arr.unshift(aFlavor);
-    console.log(arr)
+        return arr
 }
 
-addFlavor(originalFlavors, "Rainbow Sherbert")
+// addFlavor(originalFlavors, "Rainbow Sherbert")
 
-
+console.log(addFlavor(originalFlavors, "Rainbow Sherbert"))
 
 
 /* Task 3: Houston, we have a problem! There are now 32 flavors in the array! Your task is to remove an item from the end of the array. 
@@ -145,7 +145,7 @@ console.log(removeFlavorByName(originalFlavors, "Vanilla"));
 
 // ANOTHER WAY TO DO THIS ONE
 // function removeFlavorByName(array, strFlavor){
-//     array.splice(array.indexof(flavor), 1)
+//     array.splice(array.indexof(strFlavor), 1)
 // }
 
 // removeFlavorByName(originalFlavors, "Vanilla")
@@ -168,6 +168,7 @@ let updatedFlavors = copy(originalFlavors)
 console.log(updatedFlavors)
 
 
+
 /* Task 7: July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. Write a function that checks every item in the array for a given string and returns a new array called filteredArray with just these values. Rather than hardcoding "chocolate" into your function, pass a string as a parameter, and invoke with the argument "chocolate". This way you could also filter for "Vanilla", "Sherbert", etc. when those holidays roll around.
 
 Your function should accept: 
@@ -183,13 +184,22 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(/*code here*/){
+let filteredArr = []
 
-    /*code here*/
-
+function filterByWord(arr, str){
+    for(let i = 0; i < arr.length; i++){
+        if (arr[i].includes(str)){
+            filteredArr.push(arr[i])
+        }
+        
+    }
+    return filteredArr
+    // console.log(filteredArr)
 }
 
+filterByWord(originalFlavors, "Chocolate")
 
+console.log(filteredArr)
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/ 
 
